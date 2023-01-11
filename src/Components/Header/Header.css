@@ -1,0 +1,45 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 10%;
+    left: 10%;
+    height: 100px;
+    padding: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+.img-header{
+    transform: scale(0.5);
+    margin-left: -80px;
+}
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .lien-site {
+    color: #ff6060;
+    text-decoration: none;
+    display: inline-block;
+    margin: 50% 20px;
+  }
+
+  .lien-site:hover {
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .lien-menu.active {
+      border-bottom: 1px solid #ff6060;
+  }
+          
+  @media screen and (max-width: 1490px) {
+
+  }

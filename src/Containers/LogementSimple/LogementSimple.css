@@ -1,0 +1,95 @@
+.logements{
+    margin: 200px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-container{
+    grid-column: 1 / span 12;
+    height: 400px;
+}
+
+.carousel{
+    
+}
+
+.logement-fiche-containt{
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    height: auto;
+}
+
+.logement-fiche-title-position-tags{
+    grid-column: 1 / span 6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logement-fiche-title-position-tags h2{
+    color: #ff6060;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.logement-fiche-title-position-tags p:nth-child(2){
+    color: #ff6060;
+    font-size: 18px;
+}
+
+.logement-tags{
+    display: flex;
+    column-gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.tags-1, .tags-2{
+    color: #fff!important;
+    padding: 5px 20px;
+    background-color: #ff6060;
+    border-radius: 9999px;
+    font-size: 15px!important;
+}
+
+.logement-fiche-pictures-name-rating{
+    grid-column: 7 / span 6;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logement-fiche-pictures-name{
+    display: flex;
+}
+
+.logement-fiche-pictures{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 80px;
+    height: 80px;
+}
+
+.logement-fiche-pictures img{
+    object-fit: cover;
+    height: 100%;
+}
+
+.logement-fiche-description-equipement{
+    grid-column: 1 / span 12;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-bottom: 100px;
+    margin: 0 -6% 100px;
+}
+
+.logement-fiche-description{
+    grid-column: 1 / span 6;
+}
+
+.logement-fiche-equipement{
+    grid-column: 7 / span 6;
+}
