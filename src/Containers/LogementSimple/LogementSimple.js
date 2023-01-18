@@ -1,29 +1,37 @@
 import React from 'react'
 import './LogementSimple.css'
-import { useLocation } from 'react-router-dom'
+import { Navigate  } from 'react-router-dom'
 import Slider from '../../Components/Slider/Slider'
 import Accord from '../../Components/Accord/Accord'
 import Star from '../../assets/images/components/Page/logementindividual/Star.png'
 import EmptyStar from '../../assets/images/components/Page/logementindividual/EmptyStar.png'
+import ListeLogement from '../../assets/api/logements.json'
 
 
 export default function LogementSimple() {
 
-  const location = useLocation()
 
+  /* Redirection vers 404 ou page logement*/
+
+  const href = window.location.href;
+  let tabHref = href.split ('/')
+  let idHref = tabHref[tabHref.length-1]
+
+  const ficheLogement = ListeLogement.find(logement => logement.id === idHref);
+  
   /*  Nom du prestataire */
 
-  let name = location.state.host.name;
-  let name2 = name.split(' ')
+  let name = ficheLogement?.host.name;
+  let name2 = name?.split(' ')
 
   /* Tags */
-  let tags = location.state.tags
+  let tags = ficheLogement?.tags
 
 
 
   /* Notes */
 
-  const rating = location.state.rating;
+  const rating = ficheLogement?.rating;
 
   let noteLogement = [];
 
@@ -43,64 +51,72 @@ export default function LogementSimple() {
 
 
   return (
-    <div className='logements'>
-      <div className="carousel-container">
-        <div className="carousel">
-          <Slider images={location.state.pictures}/>
-        </div>
-      </div>
-      <div className="logement-fiche-containt">
-        <div className="logement-fiche-title-position-tags">
-          <h2>{location.state.title}</h2>
-          <p>{location.state.location}</p>
-          <div className="logement-tags">
-            {tags && tags.map( (items, key) => {
-              return(
-                <p 
-                key = {key}
-                className='tags'>
-                  {items}
-                </p>
-              )
-            })}
-          </div>
-            
-        </div>
-        <div className="logement-fiche-pictures-name-rating">
-          <div className="logement-fiche-pictures-name">
-            <h2>{name2 && name2.map( (items, key) => {
-              return(
-                <p 
-                  key={key}
-                  className="" > 
-                    {items}
-                  </p>
-              )
-            })}</h2>
-            <div className="logement-fiche-pictures">
-              <img src={location.state.host.picture} alt="" />
+    <>
+      { ficheLogement ? (
+
+
+        <div className='logements'>
+          <div className="carousel-container">
+            <div className="carousel">
+              <Slider images={ficheLogement.pictures}/>
             </div>
           </div>
-          <div className="logement-fiche-rating">
-            {noteLogement}
+          <div className="logement-fiche-containt">
+            <div className="logement-fiche-title-position-tags">
+              <h2>{ficheLogement.title}</h2>
+              <p>{ficheLogement.location}</p>
+              <div className="logement-tags">
+                {tags && tags.map( (items, key) => {
+                  return(
+                    <p 
+                    key = {key}
+                    className='tags'>
+                      {items}
+                    </p>
+                  )
+                })}
+              </div>
+                
+            </div>
+            <div className="logement-fiche-pictures-name-rating">
+              <div className="logement-fiche-pictures-name">
+                <h2>{name2 && name2.map( (items, key) => {
+                  return(
+                    <p 
+                      key={key}
+                      className="" > 
+                        {items}
+                      </p>
+                  )
+                })}</h2>
+                <div className="logement-fiche-pictures">
+                  <img src={ficheLogement.host.picture} alt="" />
+                </div>
+              </div>
+              <div className="logement-fiche-rating">
+                {noteLogement}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="logement-fiche-description-equipement">
-        <div className="logement-fiche-description">
-          <Accord 
-            title = {"Description"}
-            description = {location.state.description}
-          />
-        </div>
-        <div className="logement-fiche-equipement">
-          <Accord 
-            title = {"Equipements"}
-            equipments = {location.state.equipments}
-          />
+          <div className="logement-fiche-description-equipement">
+            <div className="logement-fiche-description">
+              <Accord 
+                title = {"Description"}
+                description = {ficheLogement.description}
+              />
+            </div>
+            <div className="logement-fiche-equipement">
+              <Accord 
+                title = {"Equipements"}
+                equipments = {ficheLogement.equipments}
+              />
+              </div>
           </div>
-      </div>
-        
-    </div>
+            
+        </div> 
+
+        ) : <Navigate to={`/404/`} />
+      }
+    </>
   )
 }

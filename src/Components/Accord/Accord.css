@@ -65,3 +65,6 @@
     line-height: 0;
     margin-top: 0px;
 }
+.accord-toggle:nth-child(1){
+    display: none;
+}

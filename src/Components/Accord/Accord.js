@@ -35,14 +35,15 @@ export default function Accord(props) {
                 className={toggle ? 'accord-toggle animated' : 'accord-toggle'}
                 style={{ height: toggle ? `${heightEl}` : 0 + 'px' }}
             >
-                 <p
+                { description && 
+                    <p
                     className="accord-text"
                     aria-hidden={toggle ? 'true' : 'false'}
                 >
                     {description && description}
                     
                 </p>  
-
+            }
 
 
                 {equipments && equipments.map((item, index) => {
@@ -56,8 +57,6 @@ export default function Accord(props) {
                         </p>
                     )
                 })}
-
-
 
             </div>
         </div>
