@@ -11,15 +11,13 @@
     height: 400px;
 }
 
-.carousel{
-    
-}
 
 .logement-fiche-containt{
     grid-column: 1 / span 12;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     height: auto;
+    margin-top: 200px;
 }
 
 .logement-fiche-title-position-tags{
@@ -47,22 +45,35 @@
     justify-content: center;
     align-items: center;
 }
-.tags-1, .tags-2{
+.tags, .tags{
     color: #fff!important;
     padding: 5px 20px;
     background-color: #ff6060;
     border-radius: 9999px;
     font-size: 15px!important;
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
 }
 
 .logement-fiche-pictures-name-rating{
     grid-column: 7 / span 6;
     display: flex;
     justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
 }
 
 .logement-fiche-pictures-name{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.logement-fiche-pictures-name h2{
+    font-size: 20px;
+    color: #ff6060;
 }
 
 .logement-fiche-pictures{
@@ -75,6 +86,15 @@
 .logement-fiche-pictures img{
     object-fit: cover;
     height: 100%;
+}
+
+.logement-fiche-rating{
+    margin: 30px 5% 0px ;
+}
+
+.logement-fiche-rating .star{
+    width: auto;
+    height: 30px;
 }
 
 .logement-fiche-description-equipement{
@@ -92,4 +112,45 @@
 
 .logement-fiche-equipement{
     grid-column: 7 / span 6;
+}
+
+@media screen and (max-width: 764px) {
+    .logement-fiche-containt{
+        margin-top: 150px;
+    }
+    .logement-fiche-title-position-tags{
+        grid-column: 1 / span 12;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .logement-fiche-title-position-tags h2{
+        font-size: 50px;
+    }
+    .logement-fiche-title-position-tags p{
+       font-size: 30px!important; 
+       margin-top: 25px;
+    }
+    .logement-tags{
+        margin: 0 auto;
+        margin-top: 55px;
+        margin-bottom: 35px;
+    }
+    .logement-tags p{
+        font-size: 25px!important;
+    }
+
+    .logement-fiche-pictures-name-rating{
+        grid-column: 1 / span 12;
+        align-items: center;
+    }
+    .logement-fiche-pictures-name-rating{
+        flex-direction: row;
+        flex-direction: row-reverse;
+        column-gap: 20%;
+
+    }
+    .logement-fiche-description-equipement{
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import './Home.css'
 import Card from '../../Components/Card/Card'
 import Banniere from '../../assets/images/components/Page/home/Banniere.png'
@@ -6,9 +6,6 @@ import logements from '../../assets/api/logements.json'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-
-  //console.log(logements);
-
 
   return (
     <div className="home">
@@ -18,7 +15,7 @@ export default function Home() {
         </div>
         <div className="home-container-cards">
           {logements.map( item => {
-                          //console.log(item)
+                          
             return (
               <Card key={item.id} >
                 <Link to ={`logements/${item.title.replace(/\s+/g,'-').trim()}`}

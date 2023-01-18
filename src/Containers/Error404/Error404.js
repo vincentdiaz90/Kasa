@@ -7,11 +7,13 @@ export default function Error404() {
     const navigate = useNavigate()
 
   return (
-    <div className='error404-title'>
-        <h2>Error404</h2>
+    <div className='error404'>
+        <h2 className='error404-title'>404</h2>
+        <p className='error404-message'>Oups! La page que vous demandez n'existe pas.</p>
         <button
+        className='error404-btn'
         onClick={() => navigate("/") }
-        >Retourner à l'acceuil</button>
+        >Retourner sur la page d’accueil</button>
     </div>
   )
 }

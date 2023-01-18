@@ -17,7 +17,6 @@
     cursor: pointer;
   }
 
-  .active-nav {
-      border-bottom: 1px solid #ff6060;
-      background-color: red;
-  }
+.active-nav {
+    border-bottom: 1px solid #ff6060;
+}
