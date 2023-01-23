@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className='about-container'>
       <div className="banniere-home-container">
-        <img className="banniere-home-img" src={Banniere} alt="" />
+        <img className="banniere-home-img" src={Banniere} alt="bannière de présentation" />
       </div>
       <Accord
         title = {"Fiabilité"}

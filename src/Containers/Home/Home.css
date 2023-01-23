@@ -38,5 +38,24 @@
 
 .home-img-cover{
     height: 100%;
+    width: 100%;
     object-fit: cover;
+}
+
+@media screen and (max-width: 764px){
+    .banniere-home-container{
+        margin: 150px 5% 0;
+    }
+    .home-title{
+        font-size: 30px;
+        width: 90%;
+        margin: 0 10px 0 0px;
+        text-align: center;
+    }
+    .home-container-cards{
+        background-color: transparent;
+        margin: 0 auto;
+        text-align: center;
+    }
+
 }

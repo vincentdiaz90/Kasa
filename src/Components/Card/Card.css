@@ -1,15 +1,10 @@
 .card{
     max-width: 400px;
-    min-width: 400px;
     height: 400px;
     cursor: pointer;
     border-radius: 25px;
     overflow: hidden;
     position: relative;
-}
-
-.card:hover{
-    background-color: red;
 }
 
 .card h2{
@@ -18,4 +13,10 @@
     position: absolute;
     bottom: 8%;
     left: 5%;
+}
+
+@media screen and (max-width: 764px){
+    .card{
+        min-width: 120%;
+    }
 }

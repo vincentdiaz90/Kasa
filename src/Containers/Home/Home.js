@@ -6,13 +6,11 @@ import logements from '../../assets/api/logements.json'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
-
-  
     return (
         <div className="home">
             <div className="banniere-home-container">
                 <img className="banniere-home-img" src={Banniere} alt="" />
-                <h1 className="home-title">Chez vous, partout et ailleur</h1>
+                <h1 className="home-title">Chez vous, partout et ailleurs</h1>
             </div>
             <div className="home-container-cards">
                 {logements.map((item) => {
@@ -22,7 +20,7 @@ export default function Home() {
                                 <img
                                     className="home-img-cover"
                                     src={item.cover}
-                                    alt={`image de ${item.host.name} pour ${item.title}`}
+                                    alt={`couverture pour la présentation ${item.title}`}
                                 />
                             </Link>
                             <h2 className="home-img-title">{item.title}</h2>
